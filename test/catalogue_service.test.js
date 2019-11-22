@@ -8,4 +8,20 @@ describe("catalogueService", () => {
       expect(catalogueService.countBooksByAuthor("Charles Dickens")).toBe(3);
     });
   });
+  describe("catalogueService.checkBookByTitle", () => {
+    test("returns true if the book exists", () => {
+      expect(
+        catalogueService.checkBookByTitle(
+          "The Assassination of Margaret Thatcher"
+        )
+      ).toBe(true);
+    });
+  });
+  test("returns false if the book does not exist", () => {
+    expect(
+      catalogueService.checkBookByTitle(
+        "hjldkhadkgd"
+      )
+    ).toBe(false);
+  });
 });
